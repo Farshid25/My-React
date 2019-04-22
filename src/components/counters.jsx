@@ -14,7 +14,8 @@ class Counters extends Component {
         {this.props.counters.map(
           counter => (
           <Counter 
-            key={counter.id} 
+            key={counter.id}
+            name= {counter.name}             
             onDelete={this.props.onDelete} 
             onIncrement={this.props.onIncrement}
             onMinus={this.props.onMinus}

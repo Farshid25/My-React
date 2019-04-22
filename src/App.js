@@ -7,10 +7,9 @@ class App extends Component {
  
   state = { 
     counters : [
-      {id: 1, value: 4},
-      {id: 2, value: 0},
-      {id: 3, value: 0},
-      {id: 4, value: 0}
+      {id: 1, name: "Dell Computer", value: 0},
+      {id: 2, name: "HP Computer", value: 0},
+      {id: 3, name: "Apple Computer", value: 0}
     ]
    }
  
@@ -51,7 +50,7 @@ class App extends Component {
       return (
         <React.Fragment> 
         <NavBar totalCounters={this.state.counters.filter(c => c.value > 0).length}/> 
-        <main className="container">
+        <main className="p-3 mb-2 bg-dark text-white">
             <Counters 
                 counters={this.state.counters}
                 onReset={this.handleReset}
