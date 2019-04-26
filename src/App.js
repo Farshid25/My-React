@@ -89,7 +89,7 @@ class App extends Component {
           {" "}
           <i>
             <p>
-              - This is a demo-application of
+              - This is a demo-application created by
               <br />
               - - the graduate intern "Farshid Ashtari" <br /> - - - supported
               by Accenture.
