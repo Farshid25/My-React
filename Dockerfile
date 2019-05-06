@@ -1,8 +1,8 @@
 FROM node:alpine
 
-WORKDIR /home
+COPY . /home 
 
-COPY . . 
+WORKDIR /home
 
 RUN npm install --silent
 RUN npm install react-scripts@2.1.8 -g --silent
