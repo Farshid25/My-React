@@ -1,17 +1,18 @@
-*** Variables ***
-
-${HOST}       127.0.0.1
-${PORT}       3000
-${BROWSER}    chrome
-${SERVER}     http://google.com
-
-
 *** Settings ***
+Library           SeleniumLibrary
 
-Library       SeleniumLibrary      timeout=5    implicit_wait=0
+Suite Teardown    Close All Browsers
 
 *** Test Cases ***
 
-Scenario: Wait for react keyword waits for loading
-    Go to                  ${SERVER}
-    Page should contain    Google offered in
+Headless Chrome - Open Browser
+    ${chrome_options} =        Evaluate             sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
+    Call Method                ${chrome_options}    add_argument                                         headless
+    Call Method                ${chrome_options}    add_argument                                         disable-gpu
+    Call Method                ${chrome_options}    add_argument                                         no-sandbox
+    ${options}=                Call Method          ${chrome_options}                                    to_capabilities
+
+    Open Browser               http://cnn.com       browser=chrome                                       desired_capabilities=${options}
+
+    Maximize Browser Window
+    Capture Page Screenshot
