@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generated="20190507 17:24:08.450" generator="Robot 3.1.1 (Python 2.7.15 on linux2)">
+<suite source="/opt/robotframework/tests" id="s1" name="Tests">
+<suite source="/opt/robotframework/tests/CNN.robot" id="s1-s1" name="CNN">
+<test id="s1-s1-t1" name="Headless Chrome - Open Browser">
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+</arguments>
+<assign>
+<var>${chrome_options}</var>
+</assign>
+<msg timestamp="20190507 17:24:09.214" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x7fa1ea29e110&gt;</msg>
+<status status="PASS" endtime="20190507 17:24:09.214" starttime="20190507 17:24:09.213"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>headless</arg>
+</arguments>
+<status status="PASS" endtime="20190507 17:24:09.215" starttime="20190507 17:24:09.214"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>disable-gpu</arg>
+</arguments>
+<status status="PASS" endtime="20190507 17:24:09.216" starttime="20190507 17:24:09.215"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>no-sandbox</arg>
+</arguments>
+<status status="PASS" endtime="20190507 17:24:09.217" starttime="20190507 17:24:09.216"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${chrome_options}</arg>
+<arg>to_capabilities</arg>
+</arguments>
+<assign>
+<var>${options}</var>
+</assign>
+<msg timestamp="20190507 17:24:09.221" level="INFO">${options} = {'goog:chromeOptions': {'args': [u'headless', u'disable-gpu', u'no-sandbox'], 'extensions': []}, 'platform': 'ANY', 'browserName': 'chrome', 'version': ''}</msg>
+<status status="PASS" endtime="20190507 17:24:09.221" starttime="20190507 17:24:09.217"></status>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>http:localhost:3000/</arg>
+<arg>browser=chrome</arg>
+<arg>desired_capabilities=${options}</arg>
+</arguments>
+<msg timestamp="20190507 17:24:09.222" level="INFO">Opening browser 'chrome' to base url 'http:localhost:3000/'.</msg>
+<status status="PASS" endtime="20190507 17:24:38.344" starttime="20190507 17:24:09.221"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20190507 17:24:38.463" starttime="20190507 17:24:38.345"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20190507 17:24:38.581" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20190507 17:24:38.582" starttime="20190507 17:24:38.464"></status>
+</kw>
+<status status="PASS" endtime="20190507 17:24:38.582" critical="yes" starttime="20190507 17:24:09.212"></status>
+</test>
+<kw type="teardown" name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" endtime="20190507 17:24:38.651" starttime="20190507 17:24:38.584"></status>
+</kw>
+<status status="PASS" endtime="20190507 17:24:38.651" starttime="20190507 17:24:08.531"></status>
+</suite>
+<status status="PASS" endtime="20190507 17:24:38.658" starttime="20190507 17:24:08.456"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Tests" pass="1">Tests</stat>
+<stat fail="0" id="s1-s1" name="CNN" pass="1">Tests.CNN</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
