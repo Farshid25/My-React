@@ -11,8 +11,7 @@
 # production
 /build
 
-tests/reports/log.html
-tests/reports/report.html
+tests/reports
 # misc
 .DS_Store
 .env.local
